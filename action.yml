@@ -3,4 +3,4 @@ description: "Say hello"
 author: "Ammon Morris <likesalmon@gmail.com>"
 runs:
   using: "node12"
-  main: "index.js"
+  main: "dist/index.js"
