@@ -18,6 +18,9 @@ jobs:
         with:
           id: 3
         id: request
+      - uses: ./
+        with:
+          id: 5 # fails with Unknown ID, next step will not run
       - run: echo ${{steps.request.outputs.planet}}
       # or a different repo
       # - uses: likesalmon/github-actions-sandbox@v1.0.1
