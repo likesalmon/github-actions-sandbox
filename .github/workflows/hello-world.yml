@@ -15,5 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./
+        with:
+          id: 3
       # or a different repo
       # - uses: likesalmon/github-actions-sandbox@v1.0.1

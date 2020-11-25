@@ -1,6 +1,10 @@
 name: "Hello World"
 description: "Say hello"
 author: "Ammon Morris <likesalmon@gmail.com>"
+inputs:
+  id:
+    description: "ID"
+    default: 2
 runs:
   using: "node12"
   main: "dist/index.js"
