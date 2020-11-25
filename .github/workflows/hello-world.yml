@@ -17,5 +17,7 @@ jobs:
       - uses: ./
         with:
           id: 3
+        id: request
+      - run: echo ${{steps.request.outputs.planet}}
       # or a different repo
       # - uses: likesalmon/github-actions-sandbox@v1.0.1

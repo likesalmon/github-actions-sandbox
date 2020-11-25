@@ -8,6 +8,8 @@ const run = async () => {
     .get(`https://swapi.dev/api/planets/${id}/`)
     .then((res) => res.data);
   console.log(`${name} is an ${climate} ${terrain}.`);
+
+  core.setOutput("planet", name);
 };
 
 run();
