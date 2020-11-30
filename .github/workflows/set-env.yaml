@@ -3,7 +3,7 @@ name: Environment vars
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  hello-world:
+  set-env:
     runs-on: ubuntu-latest
     steps:
       - name: Set env variable

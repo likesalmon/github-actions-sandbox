@@ -5,7 +5,7 @@ name: Output
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  hello-world:
+  set-output:
     runs-on: ubuntu-latest
     steps:
       - name: Set output variable
