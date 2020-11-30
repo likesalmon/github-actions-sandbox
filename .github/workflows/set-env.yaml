@@ -2,13 +2,17 @@ name: Environment vars
 
 on: [push, pull_request, workflow_dispatch]
 
+env:
+  FOO: foo
+  FOO_BAR: $FOO-bar
+
 jobs:
   set-env:
     runs-on: ubuntu-latest
     steps:
-      - name: Set env variable.
-        env:
-          MY_VAR: some value
-        run: echo "Setting MY_VAR to $MY_VAR"
+      - name: Log composite env var.
+        run: echo $FOO_BAR
+      - name: Set env variable that persists throughout the workflow.
+        run: echo "MY_VAR=some value"
       - name: Use env var from previous step.
         run: echo "The output is ${{env.MY_VAR}}"
