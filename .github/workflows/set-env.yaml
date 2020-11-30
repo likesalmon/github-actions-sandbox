@@ -4,7 +4,7 @@ on: [push, pull_request, workflow_dispatch]
 
 env:
   FOO: foo
-  FOO_BAR: $FOO-bar
+  FOO_BAR: ${{env.FOO}}-bar
 
 jobs:
   set-env:
@@ -16,3 +16,5 @@ jobs:
         run: echo "MY_VAR=some value" >> $GITHUB_ENV
       - name: Use env var from previous step.
         run: echo "The output is ${{env.MY_VAR}}"
+      - name: Log run ID.
+        run: echo "Run ID ${{env.github.run_id}}"
