@@ -6,7 +6,9 @@ jobs:
   set-env:
     runs-on: ubuntu-latest
     steps:
-      - name: Set env variable
+      - name: Set env variable.
         env:
           MY_VAR: some value
-      - run: echo "The output is ${{env.MY_VAR}}"
+        run: echo "Setting MY_VAR to $MY_VAR"
+      - name: Use env var from previous step.
+        run: echo "The output is ${{env.MY_VAR}}"
