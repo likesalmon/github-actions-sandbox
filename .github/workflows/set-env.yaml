@@ -9,6 +9,14 @@ jobs:
   set-env:
     runs-on: ubuntu-latest
     steps:
+      - name: Inject slug/short variables
+        uses: rlespinasse/github-slug-action@v3.x
+      - name: Set complex environment vars
+        run: echo "PATH=${{env.GITHUB_REF_SLUG_URL}}/output.json" >> $GITHUB_ENV
+      - name: Log complex enviroment vars
+        run: echo $PATH
+      - name: Log complex enviroment vars
+        run: echo {{env.PATH}}
       - name: Set env variable that persists throughout the workflow.
         run: echo "MY_VAR=some value" >> $GITHUB_ENV
       - name: Use env var from previous step.
