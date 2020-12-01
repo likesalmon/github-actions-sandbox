@@ -3,18 +3,15 @@ name: Environment vars
 on: [push, pull_request, workflow_dispatch]
 
 env:
-  FOO: foo
-  FOO_BAR: ${{env.FOO}}-bar
+  SECRET: ${{ secrets.MY_SECRET }}
 
 jobs:
   set-env:
     runs-on: ubuntu-latest
     steps:
-      - name: Log composite env var.
-        run: echo $FOO_BAR
       - name: Set env variable that persists throughout the workflow.
         run: echo "MY_VAR=some value" >> $GITHUB_ENV
       - name: Use env var from previous step.
         run: echo "The output is ${{env.MY_VAR}}"
       - name: Log run ID.
-        run: echo "Run ID ${{env.github.run_id}}"
+        run: echo "Run ID ${{github.run_id}}"
