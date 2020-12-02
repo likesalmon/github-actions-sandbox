@@ -1,9 +1,9 @@
-name: Environment vars
+name: Conditionals
 
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  set-env:
+  conditionals:
     runs-on: ubuntu-latest
     steps:
       - name: Inject slug/short variables
