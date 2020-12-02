@@ -31,5 +31,5 @@ jobs:
         run: echo "this is master"
 
       - name: Log if this is not master
-        if: ${{ env.GITHUB_REF_SLUG_URL == 'master' }}
+        if: ${{ env.GITHUB_REF_SLUG_URL != 'master' }}
         run: echo "Oops, this is actually ${{ env.GITHUB_REF_SLUG_URL }}"
