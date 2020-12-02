@@ -13,7 +13,7 @@ jobs:
         uses: rlespinasse/github-slug-action@v3.x
       - name: Set complex environment vars
         run: echo "PATH=${{env.GITHUB_REF_SLUG_URL}}/output.json" >> $GITHUB_ENV
-      - name: Log complex enviroment vars
+      - name: Log complex environment vars
         run: echo $PATH
       - name: Log complex enviroment vars
         run: echo {{env.PATH}}
